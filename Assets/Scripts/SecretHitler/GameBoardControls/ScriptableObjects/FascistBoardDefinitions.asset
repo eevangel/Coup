@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c1dab8ba4d6086488053a460ee56e9e, type: 3}
+  m_Name: FascistBoardDefinitions
+  m_EditorClassIdentifier: 
+  _boardDefinitions:
+  - _minPlayers: 5
+    _maxPlayers: 6
+    _instructions: A FASCIST AND HITLER ALONE. THEY KNOW EACH OTHER INTIMATELY.
+    _specialTileData:
+    - _hoverText: 
+      _type: 0
+    - _hoverText: 
+      _type: 0
+    - _hoverText: 'THE PRESIDENT MAY LOOK AT THE TOP THREE CARDS '
+      _type: 1
+    - _hoverText: THE PRESIDENT MUST BORE ANOTHER PLAYER TO DEATH  WITH A TOPIC THEY
+        THINK IS FASCINATING, BUT IS ACTUALLY REALLY LAME. EVERYONE KNOWS WHAT IT
+        IS BUT WON'T TELL THE PRESIDENT. NOT OUT OF FEAR, BUT BECAUSE ITS FUN TO TALK
+        BEHIND THEIR BACK.
+      _type: 2
+    - _hoverText: THE PRESIDENT MUST SUFFOCATE ANOTHER PERSON USING A HUMOROUS AMOUNT
+        OF POTATO MASH ...... VETOES ARE NOW POSSIBLE
+      _type: 3
+    - _hoverText: FASCISTS WIN! HITLER GUMDROPS AND FASCIST CHOCO TACOS FOR ALL THE
+        FASCIST CHILDREN!
+      _type: 0
+  - _minPlayers: 7
+    _maxPlayers: 8
+    _instructions: 2 FASCISTS AND HITLER. HITLER IS CLUELESS ABOUT WHO THEIR FRIENDS
+      ARE.
+    _specialTileData:
+    - _hoverText: 
+      _type: 0
+    - _hoverText: THE PRESIDENT MAY DISCREETLY USE THE ULTIMATE POWER OF MICROSOFT
+        INTERNET EXPLORER TO FIND ANOTHER PLAYER'S PARTY MEMBERSHIP CARD.
+      _type: 4
+    - _hoverText: THE PRESIDENT MUST PICK THE NEXT PRESIDENTIAL CANDIDATE
+      _type: 5
+    - _hoverText: THE PRESIDENT MAKES FUN OF ANOTHER PLAYER SO MUCH THEY DIE
+      _type: 2
+    - _hoverText: THE PRESIDENT DEFENESTRATES ANOTHER PLAYER FROM A 1 STORY BUILDING.
+        BUT THE GLASS WAS VERY SHARP, AND THE OTHER PLAYER WAS A HEMOPHILIAC ......
+        ALSO THE CABINET HAS VETO POWER OVER POLICIES
+      _type: 3
+    - _hoverText: FASCISTS WON! THEY MADE THEIR FASCISTS MUMMIES AND DADAS UBER HAPPY.
+        HITLER IS PLEASED.
+      _type: 0
+  - _minPlayers: 9
+    _maxPlayers: 11
+    _instructions: 3 FASCISTS AND HITLER. HITLER IS THRUST UNKNOWINGLY INTO THE FASCISTS
+      SPOTLIGHT
+    _specialTileData:
+    - _hoverText: THE PRESIDENT MUST MAKE FUN OF A PUPPY TO EXTRACT ANOTHER PERSON'S
+        PARTY MEMBERSHIP
+      _type: 4
+    - _hoverText: THE PRESIDENT USES THE INTERNATIONAL NETWORK OF MOMMY GOSSIP TO
+        FIND  A PLAYER'S PARTY MEMBERSHIP
+      _type: 4
+    - _hoverText: THE PRESIDENT MUST CHOOSE THE NEXT PRESIDENTIAL CANDIDATE AND BECOME
+        BESTIES
+      _type: 5
+    - _hoverText: THE PRESIDENT MUST ELECTROCUTE ANOTHER PLAYER TO DEATH USING A DOUBLE
+        A BATTERY. IT MAY TAKE 60 YEARS. BUT THEY WILL DIE.
+      _type: 2
+    - _hoverText: THE PRESIDENT CHOOSES TO FORCEFEED ANOTHER PERSON SOME MACAROONS
+        OF DOOM ... AND THEY DIE ....... ALSO THE CABINET HAS VETO POWER OVER POLICIES
+      _type: 3
+    - _hoverText: HITLER WON BY BEATING ALL THE STUPID LIBERALS AND THEIR STUPID "I
+        WANNA HELP PEOPLE" CRYBABY POLICIES
+      _type: 0

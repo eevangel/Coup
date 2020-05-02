@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a65a8c8348bfe84184c47b07eda7fe0, type: 3}
+  m_Name: PlayerRoles
+  m_EditorClassIdentifier: 
+  _roleDefinition:
+  - _players: 2
+    _liberals: 1
+    _fascists: 0
+  - _players: 5
+    _liberals: 3
+    _fascists: 1
+  - _players: 6
+    _liberals: 4
+    _fascists: 1
+  - _players: 7
+    _liberals: 4
+    _fascists: 2
+  - _players: 8
+    _liberals: 5
+    _fascists: 2
+  - _players: 9
+    _liberals: 5
+    _fascists: 3
+  - _players: 10
+    _liberals: 6
+    _fascists: 3
+  - _players: 11
+    _liberals: 6
+    _fascists: 4
+  _fascistPolicyNum: 11
+  _liberalPolicyNum: 6

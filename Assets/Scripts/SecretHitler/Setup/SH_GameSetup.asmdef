@@ -1,0 +1,16 @@
+{
+    "name": "SH_GameSetup",
+    "references": [
+        "Unity.TextMeshPro",
+        "SH_Networking",
+        "SH_Controls"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

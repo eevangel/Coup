@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f21da6782975a42835b9a0547ef9b9, type: 3}
+  m_Name: PolicyCard
+  m_EditorClassIdentifier: 
+  _fascistDiscard:
+    m_NormalColor: {r: 0.990566, g: 0.6327308, b: 0.2663314, a: 1}
+    m_HighlightedColor: {r: 0.7735849, g: 0.3933855, b: 0.14231044, a: 1}
+    m_PressedColor: {r: 0.4245283, g: 0.23511244, b: 0.11013707, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.21568628}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  _fascistKeep:
+    m_NormalColor: {r: 0.7735849, g: 0.3933855, b: 0.14231044, a: 1}
+    m_HighlightedColor: {r: 0.990566, g: 0.6327308, b: 0.2663314, a: 1}
+    m_PressedColor: {r: 1, g: 0.8662927, b: 0.7311321, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.21568628}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  _liberalDiscard:
+    m_NormalColor: {r: 0.5242524, g: 0.84332585, b: 0.9339623, a: 1}
+    m_HighlightedColor: {r: 0.11031505, g: 0.29528603, b: 0.3490566, a: 1}
+    m_PressedColor: {r: 0.126157, g: 0.15510309, b: 0.254717, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.21568628}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  _liberalKeep:
+    m_NormalColor: {r: 0.11031505, g: 0.29528603, b: 0.3490566, a: 1}
+    m_HighlightedColor: {r: 0.5242524, g: 0.84332585, b: 0.9339623, a: 1}
+    m_PressedColor: {r: 0.7989943, g: 0.9481992, b: 0.990566, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.21568628}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
