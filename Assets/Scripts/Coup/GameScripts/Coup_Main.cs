@@ -89,6 +89,8 @@ public class Coup_Main : MonoBehaviour
 
     //public GameSetupUI _gameSetupUI;
     //public SH_PlayerSetup _PlayerSetup;
+    public CharacterDeckManager _deck;
+
 
     void SetupGame_SetupState()
     {
@@ -97,18 +99,23 @@ public class Coup_Main : MonoBehaviour
             .ExecuteOnExit(ExitGameSetup)
             .On(MainEvents.GAME_SETUP_COMPLETE)
                 .Goto(MainState.IN_GAME);
-
-
-
-        //_PlayerSetup._rolesAssigned += OnRolesAssigned;
-        //_gameSetupUI._onSetupComplete += OnGameSetupComplete;
     }
 
     void EnterGameSetup()
     {
         Debug.Log("Enter game Setup");
 
-        //_gameSetupUI.StartSetup(PhotonNetwork.IsMasterClient);
+        if(PhotonNetwork.IsMasterClient)
+        {
+            CoupPlayerManager.Instance.CreatePlayerOrder();
+            List<CoupPlayer> players = CoupPlayerManager.Instance._activePlayers;
+            foreach(CoupPlayer player in players)
+            {
+                player.ReceiveCharacter(_deck.DrawOne());
+                player.ReceiveCharacter(_deck.DrawOne());
+                player.AddCoins(2);
+            }
+        }
     }
 
 

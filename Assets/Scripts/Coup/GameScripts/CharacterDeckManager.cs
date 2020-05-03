@@ -6,8 +6,8 @@ public class CharacterDeckManager : MonoBehaviour
 {
     const int NUM_PER_CHARACTER = 3;
 
-    public Stack<CoupCharacterData> _DrawPile = new Stack<CoupCharacterData>();
-    List<CoupCharacterData> _DiscardPile = new List<CoupCharacterData>();
+    public Stack<CharacterType> _DrawPile = new Stack<CharacterType>();
+    List<CharacterType> _DiscardPile = new List<CharacterType>();
 
 
     public int numShuffles = 12;
@@ -22,18 +22,18 @@ public class CharacterDeckManager : MonoBehaviour
     {
         for(int i=0; i < NUM_PER_CHARACTER; i++)
         {
-            _DrawPile.Push(new ContessaData());
-            _DrawPile.Push(new DukeData());
-            _DrawPile.Push(new AmbassadorData());
-            _DrawPile.Push(new CaptainData());
-            _DrawPile.Push(new AssassinData());
+            _DrawPile.Push(CharacterType.AMBASSADOR);
+            _DrawPile.Push(CharacterType.ASSASSIN);
+            _DrawPile.Push(CharacterType.CAPTAIN);
+            _DrawPile.Push(CharacterType.CONTESSA);
+            _DrawPile.Push(CharacterType.DUKE);
         }
         ShuffleDeck();
     }
 
     void ShuffleDeck()
     {
-        List<CoupCharacterData> tempDeck = new List<CoupCharacterData>(_DrawPile);
+        List<CharacterType> tempDeck = new List<CharacterType>(_DrawPile);
         tempDeck.AddRange(_DiscardPile);
 
         for (int i = 0; i < numShuffles; i++)
@@ -42,19 +42,19 @@ public class CharacterDeckManager : MonoBehaviour
         }
 
         _DrawPile.Clear();
-        _DrawPile = new Stack<CoupCharacterData>(tempDeck);
+        _DrawPile = new Stack<CharacterType>(tempDeck);
     }
 
     private static System.Random rng = new System.Random(System.DateTime.Now.Millisecond);
 
-    void Shuffle(ref List<CoupCharacterData> list)
+    void Shuffle(ref List<CharacterType> list)
     {
         int n = list.Count;
         while (n > 1)
         {
             n--;
             int k = rng.Next(n + 1);
-            CoupCharacterData value = list[k];
+            CharacterType value = list[k];
             list[k] = list[n];
             list[n] = value;
         }
@@ -64,12 +64,12 @@ public class CharacterDeckManager : MonoBehaviour
 
     #region deal
 
-    public CoupCharacterData DrawOne()
+    public CharacterType DrawOne()
     {
         return _DrawPile.Pop();
     }
 
-    public void DiscardOne(CoupCharacterData discard)
+    public void DiscardOne(CharacterType discard)
     {
         _DrawPile.Push(discard);
         ShuffleDeck();

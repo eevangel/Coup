@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
+[Serializable]
 public abstract class CoupCharacterData 
 {
     public CharacterType _character;
     public Sprite _characterLook;
     public string _text;
+    public bool isRevealed = false;
 
     public virtual CharacterType GetCharacter() { return _character; }
 }

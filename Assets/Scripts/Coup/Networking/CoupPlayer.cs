@@ -84,8 +84,52 @@ public class CoupPlayer : MonoBehaviour
 
     #region gameData
 
-    List<CoupCharacterData> _characters = new List<CoupCharacterData>();
-    public int Coins { get; private set; } = 0;
+    public List<CoupCharacterData> _characters = new List<CoupCharacterData>();
+    public List<CharacterType> _characterTypes = new List<CharacterType>();
+    public int _coins = 0;
+
+    public void ReceiveCharacter(CharacterType charType)
+    {
+        _view.RPC("StoreCharacter", RpcTarget.All, (byte)charType);
+    }
+
+    [PunRPC]
+    public void StoreCharacter(byte charData)
+    {
+        CharacterType character = (CharacterType)charData;
+        _characterTypes.Add(character);
+        switch (character)
+        {
+            case CharacterType.AMBASSADOR:
+                _characters.Add(new AmbassadorData());
+                break;
+            case CharacterType.ASSASSIN:
+                _characters.Add(new AssassinData());
+                break;
+            case CharacterType.CAPTAIN:
+                _characters.Add(new CaptainData());
+                break;
+            case CharacterType.DUKE:
+                _characters.Add(new DukeData());
+                break;
+            case CharacterType.CONTESSA:
+                _characters.Add(new ContessaData());
+                break;
+        }
+    }
+
+    public void AddCoins(int numCoins)
+    {
+        _coins += numCoins;
+        _coins = Mathf.Max(_coins, 0);
+        _view.RPC("SyncCoins", RpcTarget.All, _coins);
+    }
+
+    [PunRPC]
+    public void SyncCoins(int coins)
+    {
+        _coins = coins;
+    }
 
     #endregion gameData
 }
