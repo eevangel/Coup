@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5781e0b7dac80448517ffbbfdba733, type: 3}
   m_Name: PlayerLayoutDef
   m_EditorClassIdentifier: 
-  _layoutPlayers: []
+  _layoutPlayers:
+  - numPlayers: 1
+    PlayerPos: 02000000
+  - numPlayers: 2
+    PlayerPos: 0100000003000000
+  - numPlayers: 3
+    PlayerPos: 000000000200000004000000
+  - numPlayers: 4
+    PlayerPos: 00000000010000000300000004000000
+  - numPlayers: 5
+    PlayerPos: 0000000001000000020000000300000004000000
