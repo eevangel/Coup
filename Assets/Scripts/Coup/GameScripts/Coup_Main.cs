@@ -29,11 +29,11 @@ public class Coup_Main : MonoBehaviour
     private void Awake()
     {
         _view = GetComponent<PhotonView>();
-        SetupStatemMachine();
     }
 
     private void Start()
     {
+        SetupStatemMachine();
         _stateMachine.Start();
     }
 
@@ -80,6 +80,7 @@ public class Coup_Main : MonoBehaviour
     [PunRPC]
     void StartGame()
     {
+        Debug.Log("start game");
         _stateMachine.Fire(MainEvents.START_GAME);
     }
 
