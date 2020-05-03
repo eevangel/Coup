@@ -29,8 +29,8 @@ public class RoomSelectionUI : MonoBehaviour
     const string NAME_KEY = "PLAYER_NAME";
     const string ROOM_KEY= "ROOM_NAME";
 
-    const string MASTER_POST_JOIN = "Click Start when everyone is in. Make sure all the fascists come in.";
-    const string OTHER_POST_JOIN = "Yell at all the fascists while waiting for the host to start.";
+    const string MASTER_POST_JOIN = "Click Start when everyone is in.";
+    const string OTHER_POST_JOIN = "Tell everyone a big lie so they trust you.";
 
     bool _hasChosenName = false;
 

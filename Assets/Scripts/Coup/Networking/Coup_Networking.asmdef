@@ -1,0 +1,19 @@
+{
+    "name": "SH_Networking",
+    "references": [
+        "Unity.TextMeshPro",
+        "PhotonRealtime",
+        "PhotonUnityNetworking",
+        "PhotonUnityNetworking.Utilities",
+        "SH_Controls",
+        "Coup_Data"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

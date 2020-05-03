@@ -1,11 +1,12 @@
 {
-    "name": "SH_Networking",
+    "name": "Coup_Game",
     "references": [
-        "Unity.TextMeshPro",
-        "PhotonRealtime",
+        "Coup_Data",
+        "SH_Networking",
+        "Coup_Controls",
+        "Appcelerate",
         "PhotonUnityNetworking",
-        "PhotonUnityNetworking.Utilities",
-        "SH_Controls"
+        "PhotonRealtime"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
