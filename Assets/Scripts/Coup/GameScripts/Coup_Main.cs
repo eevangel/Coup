@@ -100,6 +100,8 @@ public class Coup_Main : MonoBehaviour
             .ExecuteOnExit(ExitGameSetup)
             .On(MainEvents.GAME_SETUP_COMPLETE)
                 .Goto(MainState.IN_GAME);
+
+        CoupPlayerManager.Instance.OnRecievingPlayerOrder = SetupLayout;
     }
 
     void EnterGameSetup()
@@ -109,21 +111,24 @@ public class Coup_Main : MonoBehaviour
         if(PhotonNetwork.IsMasterClient)
         {
             CoupPlayerManager.Instance.CreatePlayerOrder();
-            List<CoupPlayer> players = CoupPlayerManager.Instance._activePlayers;
-            foreach(CoupPlayer player in players)
-            {
-                player.ReceiveCharacter(_deck.DrawOne());
-                player.ReceiveCharacter(_deck.DrawOne());
-                player.AddCoins(2);
-            }
-
-            _layout.LayoutPlayers(CoupPlayerManager.Instance.ConstructOtherPlayerOrder());
-            _layout.Show(true);
-
-            _layout.SetupLocalPlayer(CoupPlayer.LocalInstance._data);
         }
     }
 
+    void SetupLayout()
+    {
+        List<CoupPlayer> players = CoupPlayerManager.Instance._activePlayers;
+        foreach (CoupPlayer player in players)
+        {
+            player.ReceiveCharacter(_deck.DrawOne());
+            player.ReceiveCharacter(_deck.DrawOne());
+            player.AddCoins(2);
+        }
+
+        _layout.LayoutPlayers(CoupPlayerManager.Instance.ConstructOtherPlayerOrder());
+        _layout.Show(true);
+
+        _layout.SetupLocalPlayer(CoupPlayer.LocalInstance._data);
+    }
 
     void OnRolesAssigned()
     {

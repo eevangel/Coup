@@ -62,6 +62,8 @@ public class CoupPlayerManager : MonoBehaviour
         _view.RPC("SetPlayerOrder", RpcTarget.All, order.ToArray());
     }
 
+    public System.Action OnRecievingPlayerOrder = () => { };
+
     [PunRPC]
     void SetPlayerOrder(string[] order)
     {
@@ -72,7 +74,7 @@ public class CoupPlayerManager : MonoBehaviour
             Debug.Log(name);
             _activePlayers.Add(_players[name]);
         }
-        
+        OnRecievingPlayerOrder();
     }
 
     public List<CoupPlayerData> ConstructOtherPlayerOrder()
