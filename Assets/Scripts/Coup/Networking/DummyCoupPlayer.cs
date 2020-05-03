@@ -9,6 +9,7 @@ public class DummyCoupPlayer : CoupPlayer
     {
         CoupPlayerManager.Instance.RegisterNewPlayer(this);
         gameObject.name = _name;
+        _data._name = _name;
     }
 }
 

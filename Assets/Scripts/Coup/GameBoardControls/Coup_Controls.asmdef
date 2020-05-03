@@ -1,3 +1,15 @@
-﻿{
-	"name": "Coup_Controls"
+{
+    "name": "Coup_Controls",
+    "references": [
+        "Coup_Data",
+        "Unity.TextMeshPro"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }

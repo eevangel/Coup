@@ -31,6 +31,7 @@ public class CoupPlayer : MonoBehaviour
         {
             LocalInstance = this;
             _name = PhotonNetwork.LocalPlayer.NickName;
+            _data._name = _name;
             PunPlayer = PhotonNetwork.LocalPlayer;
             _view.RPC("RegisterUser", RpcTarget.Others, _name, PunPlayer.ActorNumber);
             CoupPlayerManager.Instance.RegisterNewPlayer(this);
@@ -66,6 +67,7 @@ public class CoupPlayer : MonoBehaviour
     void RegisterUser(string name, int actorNumber)
     {
         _name = name;
+        _data._name = _name;
         gameObject.name = _name;
         FindPlayer(actorNumber);
         CoupPlayerManager.Instance.RegisterNewPlayer(this);
@@ -82,11 +84,9 @@ public class CoupPlayer : MonoBehaviour
 
     #endregion initialization
 
-    #region gameData
+    #region playerData
 
-    public List<CoupCharacterData> _characters = new List<CoupCharacterData>();
-    public List<CharacterType> _characterTypes = new List<CharacterType>();
-    public int _coins = 0;
+    public CoupPlayerData _data = new CoupPlayerData();
 
     public void ReceiveCharacter(CharacterType charType)
     {
@@ -96,40 +96,20 @@ public class CoupPlayer : MonoBehaviour
     [PunRPC]
     public void StoreCharacter(byte charData)
     {
-        CharacterType character = (CharacterType)charData;
-        _characterTypes.Add(character);
-        switch (character)
-        {
-            case CharacterType.AMBASSADOR:
-                _characters.Add(new AmbassadorData());
-                break;
-            case CharacterType.ASSASSIN:
-                _characters.Add(new AssassinData());
-                break;
-            case CharacterType.CAPTAIN:
-                _characters.Add(new CaptainData());
-                break;
-            case CharacterType.DUKE:
-                _characters.Add(new DukeData());
-                break;
-            case CharacterType.CONTESSA:
-                _characters.Add(new ContessaData());
-                break;
-        }
+        _data.AddCharacter((CharacterType)charData);
     }
 
     public void AddCoins(int numCoins)
     {
-        _coins += numCoins;
-        _coins = Mathf.Max(_coins, 0);
-        _view.RPC("SyncCoins", RpcTarget.All, _coins);
+        _data.AddCoins(numCoins);
+        _view.RPC("SyncCoins", RpcTarget.All, _data._coins);
     }
 
     [PunRPC]
     public void SyncCoins(int coins)
     {
-        _coins = coins;
+        _data._coins = coins;
     }
 
-    #endregion gameData
+    #endregion playerData
 }

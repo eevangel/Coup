@@ -74,4 +74,32 @@ public class CoupPlayerManager : MonoBehaviour
         }
         
     }
+
+    public List<CoupPlayerData> ConstructOtherPlayerOrder()
+    {
+        List<CoupPlayerData> playerData = new List<CoupPlayerData>();
+
+        List<CoupPlayerData> beforeFound= new List<CoupPlayerData>();
+
+        bool foundLocalPlayer = true;
+        foreach(CoupPlayer player in _activePlayers)
+        {
+            if(player.name == CoupPlayer.LocalInstance.Name)
+            {
+                foundLocalPlayer = true;
+                continue;
+            }
+            if(foundLocalPlayer)
+            {
+                playerData.Add(player._data);
+            }
+            else
+            {
+                beforeFound.Add(player._data);
+            }
+        }
+        playerData.AddRange(beforeFound);
+
+        return playerData;
+    }
 }

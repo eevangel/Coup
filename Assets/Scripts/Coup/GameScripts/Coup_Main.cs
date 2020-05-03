@@ -90,6 +90,7 @@ public class Coup_Main : MonoBehaviour
     //public GameSetupUI _gameSetupUI;
     //public SH_PlayerSetup _PlayerSetup;
     public CharacterDeckManager _deck;
+    public PlayerLayout _layout;    
 
 
     void SetupGame_SetupState()
@@ -115,6 +116,11 @@ public class Coup_Main : MonoBehaviour
                 player.ReceiveCharacter(_deck.DrawOne());
                 player.AddCoins(2);
             }
+
+            _layout.LayoutPlayers(CoupPlayerManager.Instance.ConstructOtherPlayerOrder());
+            _layout.Show(true);
+
+            _layout.SetupLocalPlayer(CoupPlayer.LocalInstance._data);
         }
     }
 
