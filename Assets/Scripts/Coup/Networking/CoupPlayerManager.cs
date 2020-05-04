@@ -83,7 +83,7 @@ public class CoupPlayerManager : MonoBehaviour
 
         List<CoupPlayerData> beforeFound= new List<CoupPlayerData>();
 
-        bool foundLocalPlayer = true;
+        bool foundLocalPlayer = false;
         foreach(CoupPlayer player in _activePlayers)
         {
             if(player.name == CoupPlayer.LocalInstance.Name)
@@ -101,6 +101,14 @@ public class CoupPlayerManager : MonoBehaviour
             }
         }
         playerData.AddRange(beforeFound);
+
+
+        string order = "ORDER: "; 
+        foreach(CoupPlayerData player in playerData)
+        {
+            order += player._name + " . ";
+        }
+        Debug.Log(order);
 
         return playerData;
     }

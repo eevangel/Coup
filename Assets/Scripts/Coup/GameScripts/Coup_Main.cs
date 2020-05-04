@@ -111,20 +111,19 @@ public class Coup_Main : MonoBehaviour
 
         if(PhotonNetwork.IsMasterClient)
         {
+            List<CoupPlayer> players = CoupPlayerManager.Instance._activePlayers;
+            foreach (CoupPlayer player in players)
+            {
+                player.ReceiveCharacter(_deck.DrawOne());
+                player.ReceiveCharacter(_deck.DrawOne());
+                player.AddCoins(2);
+            }
             CoupPlayerManager.Instance.CreatePlayerOrder();
         }
     }
 
     void SetupLayout()
     {
-        List<CoupPlayer> players = CoupPlayerManager.Instance._activePlayers;
-        foreach (CoupPlayer player in players)
-        {
-            player.ReceiveCharacter(_deck.DrawOne());
-            player.ReceiveCharacter(_deck.DrawOne());
-            player.AddCoins(2);
-        }
-
         _layout.LayoutPlayers(CoupPlayerManager.Instance.ConstructOtherPlayerOrder());
         _layout.Show(true);
 
